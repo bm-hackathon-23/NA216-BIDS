@@ -85,10 +85,10 @@ data = data.drop(labels='sex_exvivo', axis=1)
 ## convert images 1/0 to logical
 data_images = data_images.fillna(0)
 data_images['iv_t2'] = data_images['iv_t2'].astype('bool')
-data_images['iv_dmri'] = data_images['iv_t2'].astype('bool')
-data_images['iv_label'] = data_images['iv_t2'].astype('bool')
-data_images['iv_aneth'] = data_images['iv_t2'].astype('bool')
-data_images['iv_awake'] = data_images['iv_t2'].astype('bool')
+data_images['iv_dmri'] = data_images['iv_dmri'].astype('bool')
+data_images['iv_label'] = data_images['iv_label'].astype('bool')
+data_images['iv_aneth'] = data_images['iv_aneth'].astype('bool')
+data_images['iv_awake'] = data_images['iv_awake'].astype('bool')
 data_images['ev_t2'] = data_images['ev_t2'].astype('bool')
 data_images['ev_dmri'] = data_images['ev_dmri'].astype('bool')
 data_images['ev_label'] = data_images['ev_label'].astype('bool')
@@ -106,11 +106,11 @@ data.to_csv(partout, sep='\t', index=False, na_rep=np.nan) #, quoting=csv.QUOTE_
 partjson = {
     "participant_id": {"Description": "Identifies unique subjects."},
     "species": {"Description": "The species of the animal described by the subject ID.", "Levels": "callithrix jacchus"},
-    "age": {"Description": "The age of the animal at observation.", "Units": 'months?'},
+    "age": {"Description": "The age of the animal at observation.", "Units": 'years'},
     "sex": {"Description": "The gender of the animal.", "Levels": {"M":"male", "F":"female"}},
     "weight": {"Description": "The weight of the animal at observation.", "Units": 'grams'},
     "exvivo_db": {"Description": "The participant ID used when acquiring exvivo data."},
-    "age_exvivo": {"Description": "The age of the animal when the brain as preserved.", "Units": 'months'}
+    "age_exvivo": {"Description": "The age of the animal when the brain was dissected.", "Units": 'years'}
 }
 
 with open(partjson_out, "w") as outfile:

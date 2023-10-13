@@ -41,7 +41,14 @@ Fill in relevant information here.
 
 EOF
 
-echo '{"Name": "NA216 Dataset", "BIDSVersion": 1.8.0, "Authors": "Mind/Brain RIKEN", "Citation": ["https://doi.org/10.24475/bminds.mri.thj.4624"], "Funding": ["Riken", "Japan"], "Ethics": ["Approved"], "DatasetDOI": ["https://doi.org/10.24475/bminds.mri.thj.4624"], "GeneratedBy": "Brent McPherson"}' > $BIDSRAW/dataset_description.json
+echo '{"Name": "Brain/MINDS Marmoset Brain MRI Dataset NA216 (In Vivo) and eNA91 (Ex Vivo)",\
+       "BIDSVersion": "1.8.0",\
+	   "Authors": "Brain/MINDS RIKEN",\
+	   "Citation": ["https://doi.org/10.24475/bminds.mri.thj.4624"],\
+	   "Funding": ["Japan Agency for Medical Research and Development (AMED)"],\
+	   "Ethics": ["Approved"],\
+	   "DatasetDOI": ["https://doi.org/10.24475/bminds.mri.thj.4624"],\
+	   "GeneratedBy": "Brent McPherson"}' > $BIDSRAW/dataset_description.json
 
 ## create participants.tsv and other BIDS files
 python move-to-bids.py $DATADIR
@@ -404,23 +411,23 @@ echo "Migrating data into BIDS layout..."
 ## make top level sidecars to reduce redundant filler
 ##  -- This should be rextracted / may require sub-###-ses-01 variability to capture unique info
 
-echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 1200,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 12,"EchoTime": 0.002,"InversionTime": 1.600,"NumberOfAverages": 1,"RepetitionTime": 6.000,"AcquisitionVoxelSize": [270, 270, 540]}"' > $BIDSRAW/ses-01_acq-invivo_T1w.json
+echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 1200,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 12,"EchoTime": 0.002,"InversionTime": 1.600,"NumberOfAverages": 1,"RepetitionTime": 6.000,"AcquisitionVoxelSize": [270, 270, 540]}' > $BIDSRAW/ses-01_acq-invivo_T1w.json
 
-echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 444,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 90,"RepetitionTime": 4.000,"EchoTime": 0.022,"RAREFactor": 4,"Numberof Averages": 1,"AcquisitionVoxelSize": [270, 270, 540]}"' > $BIDSRAW/ses-01_acq-invivo_T2w.json
+echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 444,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 90,"RepetitionTime": 4.000,"EchoTime": 0.022,"RAREFactor": 4,"Numberof Averages": 1,"AcquisitionVoxelSize": [270, 270, 540]}' > $BIDSRAW/ses-01_acq-invivo_T2w.json
 
-echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL","PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 3000,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 90,"RepetitionTime": 3.000,"EchoTime": 0.0256,"PhaseEncodingDirection": "i-","AcquisitionVoxelSize": [350, 350, 700]}"' > $BIDSRAW/ses-01_acq-invivo_dwi.json
+echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL","PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 3000,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 90,"RepetitionTime": 3.000,"EchoTime": 0.0256,"PhaseEncodingDirection": "i-","AcquisitionVoxelSize": [350, 350, 700]}' > $BIDSRAW/ses-01_acq-invivo_dwi.json
 
-echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 1500,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 40,"EchoTime": 0.018,"NumberOfAverage": 1,"RepetitionTime": 2.000,"AcquisitionVoxelSize": [500, 500, 1000]}"' > $BIDSRAW/ses-01_task-aneth_acq-invivo_bold.json
+echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 1500,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 40,"EchoTime": 0.018,"NumberOfAverage": 1,"RepetitionTime": 2.000,"AcquisitionVoxelSize": [500, 500, 1000]}' > $BIDSRAW/ses-01_task-aneth_acq-invivo_bold.json
 
-echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 1324.1324,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 8,"EchoTime": 0.018,"RepetitionTime": 2,"AcquisitionVoxelSize": [500, 500, 1000]}"' > $BIDSRAW/ses-01_task-awake_acq-invivo_run-01_bold.json
+echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 1324.1324,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 8,"EchoTime": 0.018,"RepetitionTime": 2,"AcquisitionVoxelSize": [500, 500, 1000]}' > $BIDSRAW/ses-01_task-awake_acq-invivo_run-01_bold.json
 
-echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 1324.1324,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 8,"EchoTime": 0.018,"RepetitionTime": 2,"AcquisitionVoxelSize": [500, 500, 1000]}"' > $BIDSRAW/ses-01_task-awake_acq-invivo_run-02_bold.json
+echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 1324.1324,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 8,"EchoTime": 0.018,"RepetitionTime": 2,"AcquisitionVoxelSize": [500, 500, 1000]}' > $BIDSRAW/ses-01_task-awake_acq-invivo_run-02_bold.json
 
-echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 1324.1324,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 8,"EchoTime": 0.018,"RepetitionTime": 2,"AcquisitionVoxelSize": [500, 500, 1000]}"' > $BIDSRAW/ses-01_task-awake_acq-invivo_run-03_bold.json
+echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 1324.1324,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 8,"EchoTime": 0.018,"RepetitionTime": 2,"AcquisitionVoxelSize": [500, 500, 1000]}' > $BIDSRAW/ses-01_task-awake_acq-invivo_run-03_bold.json
 
-echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 13800,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 90,"RepetitionTime": 10.000,"EchoTime": 0.0293,"PhaseEncodingDirection": "i-","NumberOfAverages": 16,"AcquisitionVoxelSize": [100, 100, 200]}"' > $BIDSRAW/ses-01_acq-exvivo_T2w.json
+echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 13800,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 90,"RepetitionTime": 10.000,"EchoTime": 0.0293,"PhaseEncodingDirection": "i-","NumberOfAverages": 16,"AcquisitionVoxelSize": [100, 100, 200]}' > $BIDSRAW/ses-01_acq-exvivo_T2w.json
 
-echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 23940,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 90,"EchoTime": 0.0284,"RepetitionTime": 4.000,"PhaseEncodingDirection": "i-","NumberOfAverages": 2,"AcquisitionVoxelSize": [200, 200, 200]}"' > $BIDSRAW/ses-01_acq-exvivo_dwi.json
+echo '{"Manufacturer": "Bruker","ManufacturersModelName": "BioSpec","ImageType": ["ORIGINAL", "PRIMARY", "M", "ND", "NORM"],"AcquisitionTime": 23940,"AcquisitionDate": 20230826,"MagneticFieldStrength": 9.4,"FlipAngle": 90,"EchoTime": 0.0284,"RepetitionTime": 4.000,"PhaseEncodingDirection": "i-","NumberOfAverages": 2,"AcquisitionVoxelSize": [200, 200, 200]}' > $BIDSRAW/ses-01_acq-exvivo_dwi.json
 
 ## .json sidecars are technically optional for derivatives. They'd be good to add, but currently are mostly BEP proposals.
 ## So there is no final consensus on what they should be / how they should be structured.
