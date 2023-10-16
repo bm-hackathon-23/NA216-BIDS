@@ -41,13 +41,13 @@ Fill in relevant information here.
 
 EOF
 
-echo '{"Name": "Brain/MINDS Marmoset Brain MRI Dataset NA216 (In Vivo) and eNA91 (Ex Vivo)",\
-       "BIDSVersion": "1.8.0",\
-	   "Authors": "Brain/MINDS RIKEN",\
-	   "Citation": ["https://doi.org/10.24475/bminds.mri.thj.4624"],\
-	   "Funding": ["Japan Agency for Medical Research and Development (AMED)"],\
-	   "Ethics": ["Approved"],\
-	   "DatasetDOI": ["https://doi.org/10.24475/bminds.mri.thj.4624"],\
+echo '{"Name": "Brain/MINDS Marmoset Brain MRI Dataset NA216 (In Vivo) and eNA91 (Ex Vivo)",
+       "BIDSVersion": "1.8.0",
+	   "Authors": "Brain/MINDS RIKEN",
+	   "Citation": ["https://doi.org/10.24475/bminds.mri.thj.4624"],
+	   "Funding": ["Japan Agency for Medical Research and Development (AMED)"],
+	   "Ethics": ["Approved"],
+	   "DatasetDOI": ["https://doi.org/10.24475/bminds.mri.thj.4624"],
 	   "GeneratedBy": "Brent McPherson"}' > $BIDSRAW/dataset_description.json
 
 ## create participants.tsv and other BIDS files
